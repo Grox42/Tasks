@@ -1,4 +1,4 @@
-#include "squaring.h"
+#include "Squaring.h"
 
 #include <QApplication>
 
