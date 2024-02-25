@@ -10,6 +10,7 @@ CONFIG += c++17
 
 SOURCES += \
     Squaring.cpp \
+    StringValidator.cpp \
     main.cpp
 
 HEADERS += \

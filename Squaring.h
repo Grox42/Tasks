@@ -11,7 +11,6 @@ class Squaring: public QWidget
 {
     Q_OBJECT
 private:
-    QTextCodec *codec;
     QFrame *frame;
     QLabel *inputLabel;
     QLineEdit *inputEdit;

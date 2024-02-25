@@ -7,8 +7,8 @@
 class StringValidator: public QValidator
 {
 public:
-    StringValidator(QObject *parent): QValidator(parent);
-    virtual State validate(QString &, int &) const;
+    StringValidator(QObject *parent);
+    virtual State validate(QString &input, int &pos) const;
 };
 
 #endif // STRINGVALIDATOR_H
