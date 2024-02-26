@@ -1,11 +1,11 @@
-#include "squaring.h"
+#include "window.h"
 
 #include <QApplication>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    Squaring w;
-    w.show();
+    Window window;
+    window.show();
     return a.exec();
 }
