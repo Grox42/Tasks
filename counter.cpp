@@ -1,10 +1,18 @@
 #include "counter.h"
 
-Counter::Counter(QWidget *parent): QWidget(parent)
+Counter::Counter(const QString &contents, QWidget *parent): QLineEdit(contents, parent)
 {
+    setEnabled(false);
 }
 
-Counter::~Counter()
+void Counter::addOne()
 {
+    QString str = text();
+    qint8 number = str.toInt();
+    number++;
+    if (number != 0 && number % 5 == 0)
+        emit tickSignal();
+    str.setNum(number);
+    setText(str);
 }
 

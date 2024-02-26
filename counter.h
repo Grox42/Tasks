@@ -8,10 +8,9 @@ class Counter: public QLineEdit
     Q_OBJECT
 signals:
     void tickSignal();
-private slots:
+public slots:
     void addOne();
 public:
     Counter(const QString &contents, QWidget *parent = nullptr);
-    ~Counter();
 };
 #endif // COUNTER_H
