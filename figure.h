@@ -7,10 +7,10 @@ class Figure
 {
 protected:
     int x, y, dx, dy, halfLength;
-    virtual void draw(QPainter *painter);
+    virtual void draw(QPainter *painter) = 0;
 public:
     Figure(int x, int y, int halfLength);
-    void move(float angle, QPainter painter);
+    void move(qreal angle, QPainter *painter);
 };
 
 #endif // FIGURE_H

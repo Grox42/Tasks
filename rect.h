@@ -8,7 +8,7 @@ class Rect: public Figure
 protected:
     virtual void draw(QPainter *painter);
 public:
-    Rect();
+    Rect(int x, int y, int halfLength);
 };
 
 #endif // RECT_H
