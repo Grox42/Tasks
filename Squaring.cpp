@@ -59,10 +59,9 @@ Squaring::~Squaring()
 
 void Squaring::begin()
 {
-    //inputEdit->clear();
+    inputEdit->clear();
     inputEdit->setEnabled(true);
     inputEdit->setFocus();
-    inputEdit->setText("");
 
     outputLabel->setVisible(false);
 
@@ -99,8 +98,7 @@ void Squaring::calc()
         nextButton->setEnabled(true);
         nextButton->setDefault(true);
         nextButton->setFocus();
-    }
-    else {
+    } else {
         QMessageBox message(QMessageBox::Information, "Squaring", "The entered string is invalid!", QMessageBox::Ok);
         message.exec();
     }
