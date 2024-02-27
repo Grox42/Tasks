@@ -29,8 +29,7 @@ void Area::timerEvent(QTimerEvent *event)
     if (event->timerId() == time) {
         angle += 0.2;
         update();
-    }
-    else
+    } else
         QWidget::timerEvent(event);
 }
 
