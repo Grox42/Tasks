@@ -35,7 +35,7 @@ Window::Window(QWidget *parent): QWidget{parent}
 
     connect(calc, &QPushButton::clicked, editLeft, &Counter::addOne);
     connect(editLeft, &Counter::tickSignal, editRight, &Counter::addOne);
-    connect(exit, &QPushButton::clicked, this, &Window::close);
+    connect(exit, &QPushButton::clicked, this, close);
 }
 
 Window::~Window()

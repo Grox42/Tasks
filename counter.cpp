@@ -8,7 +8,7 @@ Counter::Counter(const QString &contents, QWidget *parent): QLineEdit(contents, 
 void Counter::addOne()
 {
     QString str = text();
-    qint8 number = str.toInt();
+    qint32 number = str.toInt();
     number++;
     if (number != 0 && number % 5 == 0)
         emit tickSignal();

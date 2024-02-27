@@ -10,8 +10,10 @@ class Window: public QWidget
 {
     Q_OBJECT
 private:
-    QLabel *labelLeft, *labelRight;
-    Counter *editLeft, *editRight;
+    QLabel *labelLeft;
+    QLabel *labelRight;
+    Counter *editLeft;
+    Counter *editRight;
     QPushButton *calc;
     QPushButton *exit;
 public:
