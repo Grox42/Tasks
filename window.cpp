@@ -37,13 +37,3 @@ Window::Window(QWidget *parent): QWidget{parent}
     connect(editLeft, &Counter::tickSignal, editRight, &Counter::addOne);
     connect(exit, &QPushButton::clicked, this, close);
 }
-
-Window::~Window()
-{
-    delete labelLeft;
-    delete labelRight;
-    delete editLeft;
-    delete editRight;
-    delete calc;
-    delete exit;
-}
