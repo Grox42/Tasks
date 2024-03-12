@@ -12,7 +12,7 @@ Squaring::Squaring(QWidget *parent): QWidget(parent)
     frame->setFrameShadow(QFrame::Raised);
 
     inputLabel = new QLabel("Enter a number:", this);
-    inputEdit = new QLineEdit("", this);
+    inputEdit = new QLineEdit(this);
 
     StringValidator *stringValidator = new StringValidator(inputEdit);
     inputEdit->setValidator(stringValidator);
@@ -41,9 +41,9 @@ Squaring::Squaring(QWidget *parent): QWidget(parent)
 
     begin();
 
-    connect(inputEdit, &QLineEdit::returnPressed, this, calc);
-    connect(nextButton, &QPushButton::clicked, this, begin);
-    connect(exitButton, &QPushButton::clicked, this, close);
+    connect(inputEdit, &QLineEdit::returnPressed, this, &calc);
+    connect(nextButton, &QPushButton::clicked, this, &begin);
+    connect(exitButton, &QPushButton::clicked, this, &close);
 }
 
 void Squaring::begin()
