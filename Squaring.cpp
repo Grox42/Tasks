@@ -76,6 +76,12 @@ void Squaring::calc()
 
     if (ok) {
         result = number * number;
+        if (!qIsFinite(result)) {
+            QMessageBox message(QMessageBox::Information, "Squaring", "The square of the entered number overflows the variable!", QMessageBox::Ok);
+            message.exec();
+            inputEdit->clear();
+            return;
+        }
         str.setNum(result);
 
         inputEdit->setEnabled(false);
