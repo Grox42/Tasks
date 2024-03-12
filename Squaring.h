@@ -20,7 +20,6 @@ private:
     QPushButton *exitButton;
 public:
     Squaring(QWidget *parent = nullptr);
-    ~Squaring();
 public slots:
     void begin();
     void calc();

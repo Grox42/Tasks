@@ -8,8 +8,8 @@ Squaring::Squaring(QWidget *parent): QWidget(parent)
     setWindowTitle("Squaring");
 
     frame = new QFrame(this);
-    frame->setFrameShadow(QFrame::Raised);
     frame->setFrameShape(QFrame::Panel);
+    frame->setFrameShadow(QFrame::Raised);
 
     inputLabel = new QLabel("Enter a number:", this);
     inputEdit = new QLineEdit("", this);
@@ -18,7 +18,7 @@ Squaring::Squaring(QWidget *parent): QWidget(parent)
     inputEdit->setValidator(stringValidator);
 
     outputLabel = new QLabel("Result:", this);
-    outputEdit = new QLineEdit("",this);
+    outputEdit = new QLineEdit("", this);
 
     nextButton = new QPushButton("Next", this);
     exitButton = new QPushButton("Exit", this);
@@ -46,17 +46,6 @@ Squaring::Squaring(QWidget *parent): QWidget(parent)
     connect(exitButton, &QPushButton::clicked, this, close);
 }
 
-Squaring::~Squaring()
-{
-    delete frame;
-    delete inputLabel;
-    delete inputEdit;
-    delete outputLabel;
-    delete outputEdit;
-    delete nextButton;
-    delete exitButton;
-}
-
 void Squaring::begin()
 {
     inputEdit->clear();
@@ -82,7 +71,8 @@ void Squaring::calc()
 
     QString str = inputEdit->text();
     bool ok;
-    qreal number = str.toDouble(&ok), result;
+    qreal number = str.toDouble(&ok);
+    qreal result;
 
     if (ok) {
         result = number * number;
@@ -92,8 +82,8 @@ void Squaring::calc()
 
         outputLabel->setVisible(true);
 
-        outputEdit->setText(str);
         outputEdit->setVisible(true);
+        outputEdit->setText(str);
 
         nextButton->setEnabled(true);
         nextButton->setDefault(true);
