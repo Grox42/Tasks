@@ -18,8 +18,6 @@ private:
     QPushButton *exit;
 public:
     Window(QWidget *parent = nullptr);
-signals:
-
 };
 
 #endif // WINDOW_H

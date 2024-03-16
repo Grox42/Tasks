@@ -1,5 +1,6 @@
 #include "window.h"
 #include <QHBoxLayout>
+#include <QMessageBox>
 
 Window::Window(QWidget *parent): QWidget{parent}
 {
@@ -32,8 +33,9 @@ Window::Window(QWidget *parent): QWidget{parent}
     layoutMain->addLayout(layoutTop);
     layoutMain->addLayout(layoutMid);
     layoutMain->addLayout(layoutLow);
+    layoutMain->addStretch();
 
     connect(calc, &QPushButton::clicked, editLeft, &Counter::addOne);
     connect(editLeft, &Counter::tickSignal, editRight, &Counter::addOne);
-    connect(exit, &QPushButton::clicked, this, close);
+    connect(exit, &QPushButton::clicked, this, &close);
 }

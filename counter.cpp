@@ -10,7 +10,7 @@ void Counter::addOne()
     QString str = text();
     qint32 number = str.toInt();
     number++;
-    if (number != 0 && number % 5 == 0)
+    if (number % 5 == 0)
         emit tickSignal();
     str.setNum(number);
     setText(str);
