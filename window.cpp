@@ -1,6 +1,7 @@
 #include "window.h"
 #include <QHBoxLayout>
 #include <QMessageBox>
+#include <QDebug>
 
 Window::Window(QWidget *parent): QWidget{parent}
 {
@@ -13,23 +14,33 @@ Window::Window(QWidget *parent): QWidget{parent}
     editRight = new Counter("0", this);
 
     calc = new QPushButton("+1", this);
-    calc->setDefault(true);
 
     exit = new QPushButton("Exit", this);
 
     QHBoxLayout *layoutTop = new QHBoxLayout();
+
+    QHBoxLayout *layoutMid = new QHBoxLayout();
+
+    QHBoxLayout *layoutLow = new QHBoxLayout();
+
+    QVBoxLayout *layoutMain = new QVBoxLayout(this);
+
+    if (labelLeft && labelRight && editLeft && editRight && calc && exit && layoutTop && layoutMid && layoutLow) {
+        qDebug() << "Error: memory allocation";
+        return;
+    }
+
+    calc->setDefault(true);
+
     layoutTop->addWidget(labelLeft);
     layoutTop->addWidget(labelRight);
 
-    QHBoxLayout *layoutMid = new QHBoxLayout();
     layoutMid->addWidget(editLeft);
     layoutMid->addWidget(editRight);
 
-    QHBoxLayout *layoutLow = new QHBoxLayout();
     layoutLow->addWidget(calc);
     layoutLow->addWidget(exit);
 
-    QVBoxLayout *layoutMain = new QVBoxLayout(this);
     layoutMain->addLayout(layoutTop);
     layoutMain->addLayout(layoutMid);
     layoutMain->addLayout(layoutLow);
