@@ -25,8 +25,14 @@ Window::Window(QWidget *parent): QWidget{parent}
 
     QVBoxLayout *layoutMain = new QVBoxLayout(this);
 
-    if (labelLeft && labelRight && editLeft && editRight && calc && exit && layoutTop && layoutMid && layoutLow) {
+    if (!(labelLeft && labelRight && editLeft && editRight && calc && exit && layoutTop && layoutMid && layoutLow)) {
         qDebug() << "Error: memory allocation";
+        if (layoutTop)
+            delete layoutTop;
+        if (layoutMid)
+            delete layoutMid;
+        if (layoutLow)
+            delete layoutLow;
         return;
     }
 
