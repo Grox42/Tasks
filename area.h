@@ -4,7 +4,6 @@
 #include "line.h"
 #include "rect.h"
 #include <QWidget>
-#include <QTimer>
 
 class Area : public QWidget
 {
@@ -21,7 +20,6 @@ private:
     virtual void hideEvent(QHideEvent *event);
 public:
     Area(QWidget *parent = nullptr);
-    ~Area();
 };
 
 #endif // AREA_H

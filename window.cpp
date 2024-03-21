@@ -15,9 +15,3 @@ Window::Window(QWidget *parent): QWidget(parent)
 
     connect(button, &QPushButton::clicked, this, &QWidget::close);
 }
-
-Window::~Window()
-{
-    delete area;
-    delete button;
-}

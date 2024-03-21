@@ -13,7 +13,6 @@ private:
     QPushButton *button;
 public:
     Window(QWidget *parent = nullptr);
-    ~Window();
 };
 
 #endif // WINDOW_H
